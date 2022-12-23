@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export const Login = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    if (user != null && user !== "") {
+  const handleLogin = () => {
+    if (user !== "") {
       login(user);
       navigate("/");
     }
@@ -21,7 +21,7 @@ export const Login = () => {
         value={user}
         onChange={(e) => setUser(e.target.value)}
       />
-      <button onClick={handleClick}>Submit</button>
+      <button onClick={handleLogin}>Submit</button>
     </>
   );
 };
