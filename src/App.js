@@ -14,6 +14,7 @@ import { OrderSummary } from "./components/OrderSummary";
 import { Products } from "./components/Products";
 import { Profile } from "./components/Profile";
 import React from "react";
+import { RequireAuth } from "./components/RequireAuth";
 import { UserDetails } from "./components/UserDetails";
 import { Users } from "./components/Users";
 
@@ -44,7 +45,14 @@ function App() {
             <Route path=":userId" element={<UserDetails />} />
             <Route path="admin" element={<Admin />} />
           </Route>
-          <Route path="profile" element={<Profile />} />
+          <Route
+            path="profile"
+            element={
+              <RequireAuth>
+                <Profile />
+              </RequireAuth>
+            }
+          />
           <Route path="login" element={<Login />} />
           <Route path="*" element={<NotMatch />} />
         </Routes>
