@@ -6,11 +6,13 @@ import { Admin } from "./components/Admin";
 import { AuthProvider } from "./auth";
 import { Features } from "./components/ProductFeatures";
 import { Home } from "./components/Home";
+import { Login } from "./components/Login";
 import { Navbar } from "./components/Navbar";
 import { New } from "./components/ProductNew";
 import { NotMatch } from "./components/NotMatch";
 import { OrderSummary } from "./components/OrderSummary";
 import { Products } from "./components/Products";
+import { Profile } from "./components/Profile";
 import React from "react";
 import { UserDetails } from "./components/UserDetails";
 import { Users } from "./components/Users";
@@ -42,6 +44,8 @@ function App() {
             <Route path=":userId" element={<UserDetails />} />
             <Route path="admin" element={<Admin />} />
           </Route>
+          <Route path="profile" element={<Profile />} />
+          <Route path="login" element={<Login />} />
           <Route path="*" element={<NotMatch />} />
         </Routes>
       </AuthProvider>
